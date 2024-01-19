@@ -16,6 +16,10 @@ app.use(cors(corsOptions));
 
 const cache = new NodeCache({ stdTTL: 3600 });
 
+app.get('/', (req, res) => {
+  return res.json('Hello world');
+});
+
 app.get('/api/quando-o-criciuma-joga', async (req: Request, res: Response) => {
   try {
     const data = await fetchApiFootballData(req, res);
