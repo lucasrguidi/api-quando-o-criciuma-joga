@@ -26,4 +26,4 @@ async function getApiFootballTable() {
 exports.tableRepository = {
     getApiFootballTable,
 };
-//# sourceMappingURL=table.repository.js.map
+//# sourceMappingURL=table-repository.js.map

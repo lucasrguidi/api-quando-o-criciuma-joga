@@ -1,7 +1,7 @@
 import NodeCache from 'node-cache';
 import express, { Request, Response } from 'express';
 import cors from 'cors';
-import { tableController } from './controllers/table.controller';
+import { tableController } from './controllers/table-controller';
 import { nextMatchesController } from './controllers/next-matches.controller';
 import { lastMatchesController } from './controllers/last-matches.controller';
 

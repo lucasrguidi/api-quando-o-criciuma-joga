@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const node_cache_1 = __importDefault(require("node-cache"));
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
-const table_controller_1 = require("./controllers/table.controller");
+const table_controller_1 = require("./controllers/table-controller");
 const next_matches_controller_1 = require("./controllers/next-matches.controller");
 const last_matches_controller_1 = require("./controllers/last-matches.controller");
 const app = (0, express_1.default)();
