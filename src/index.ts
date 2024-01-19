@@ -16,7 +16,7 @@ app.use(cors(corsOptions));
 
 const cache = new NodeCache({ stdTTL: 3600 });
 
-app.get('/', (req, res) => {
+app.get('/', (_req, res) => {
   return res.json('Hello world');
 });
 
@@ -29,7 +29,7 @@ app.get('/api/quando-o-criciuma-joga', async (req: Request, res: Response) => {
   }
 });
 
-const fetchApiFootballData = async (req: Request, res: Response) => {
+const fetchApiFootballData = async (_req: Request, res: Response) => {
   try {
     const cachedData = cache.get('cachedData');
 
