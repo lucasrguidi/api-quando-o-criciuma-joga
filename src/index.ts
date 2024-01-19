@@ -1,19 +1,10 @@
 import NodeCache from 'node-cache';
 import express, { Request, Response } from 'express';
-import cors from 'cors';
-import { tableController } from './controllers/table-controller';
+import { tableController } from './controllers/table.controller';
 import { nextMatchesController } from './controllers/next-matches.controller';
 import { lastMatchesController } from './controllers/last-matches.controller';
 
 const app = express();
-
-const corsOptions = {
-  origin: '*',
-  credentials: true,
-  optionSuccessStatus: 200,
-};
-app.use(cors(corsOptions));
-
 const cache = new NodeCache({ stdTTL: 3600 });
 
 app.get('/', (_req: Request, res: Response) => {

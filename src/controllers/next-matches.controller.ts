@@ -1,4 +1,4 @@
-import { nextMatchesRepository } from 'src/repositories/next-matches.repository';
+import { nextMatchesRepository } from '../repositories/next-matches.repository';
 
 async function getNextMatchesData() {
   try {

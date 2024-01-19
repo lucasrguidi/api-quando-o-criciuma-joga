@@ -1,4 +1,4 @@
-import { tableRepository } from 'src/repositories/table-repository';
+import { tableRepository } from '../repositories/table.repository';
 
 async function getTableData() {
   try {
