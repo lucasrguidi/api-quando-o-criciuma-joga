@@ -7,8 +7,8 @@ const corsOptions = {
 };
 import express, { Request, Response } from 'express';
 import { tableController } from './controllers/table.controller';
-import { upcomingMatchesController } from './controllers/upcoming-matches.controller';
-import { previousMatchesController } from './controllers/previous-matches.controller';
+import { nextMatchesController } from './controllers/next-matches.controller';
+import { lastMatchesController } from './controllers/last-matches.controller';
 
 const app = express();
 app.use(cors(corsOptions));
@@ -36,13 +36,13 @@ const fetchApiFootballData = async (_req: Request, res: Response) => {
     }
 
     const tableData = await tableController.getTableData();
-    const upcomingMatchesData = await upcomingMatchesController.getUpcomingMatchesData();
-    const previousMatchesData = await previousMatchesController.getPreviousMatchesData();
+    const nextMatchesData = await nextMatchesController.getNextMatchesData();
+    const lastMatchesData = await lastMatchesController.getLastMatchesData();
 
     const data = {
-      table: tableData,
-      upcomingMatches: upcomingMatchesData,
-      previousMatches: previousMatchesData,
+      tableData,
+      nextMatchesData,
+      lastMatchesData,
     };
 
     cache.set('cachedData', data);
