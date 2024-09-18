@@ -40,9 +40,9 @@ const fetchApiFootballData = async (_req: Request, res: Response) => {
     const lastMatchesData = await lastMatchesController.getLastMatchesData();
 
     const data = {
-      tableData,
-      nextMatchesData,
-      lastMatchesData,
+      table: tableData,
+      upcomingMatches: nextMatchesData,
+      previousMatches: lastMatchesData,
     };
 
     cache.set('cachedData', data);
