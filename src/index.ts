@@ -16,7 +16,6 @@ app.use(cors(corsOptions));
 
 const cache = new NodeCache({ stdTTL: 3600 });
 
-// Periodic function to refresh cache data
 const refreshCache = async () => {
   try {
     console.log('Refreshing cache...');
@@ -37,10 +36,8 @@ const refreshCache = async () => {
   }
 };
 
-// Set interval to refresh cache every hour (3600 * 1000 ms)
 setInterval(refreshCache, 3600000);
 
-// Health check route
 app.get('/', (_req: Request, res: Response) => {
   return res.json('Hello world');
 });
@@ -62,17 +59,16 @@ const fetchApiFootballData = async (_req: Request, res: Response) => {
       return cachedData;
     }
 
-    // If no cached data, refresh the cache
     await refreshCache();
 
-    return cache.get('cachedData'); // Return the refreshed data
+    return cache.get('cachedData'); 
   } catch (error) {
     console.log(error);
     return res.status(500).json({ error: 'Erro ao obter os dados.' });
   }
 };
 
-// Ping endpoint to keep app alive
+
 const pingSelf = async () => {
   try {
     await fetch(`https://api-quando-o-criciuma-joga.onrender.com/`);
@@ -82,8 +78,7 @@ const pingSelf = async () => {
   }
 };
 
-// Run self-ping every 15 minutes (to avoid idle)
-setInterval(pingSelf, 900000); // 15 * 60 * 1000 ms
+setInterval(pingSelf, 840000); 
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
