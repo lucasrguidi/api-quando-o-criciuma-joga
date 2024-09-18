@@ -11,7 +11,7 @@ interface axiosConfig {
 
 const config: axiosConfig = {
   method: 'get',
-  url: 'https://v3.football.api-sports.io/standings?league=604&season=2024',
+  url: 'https://v3.football.api-sports.io/standings?league=71&season=2024',
   headers: {
     'x-rapidapi-key': 'bb7c90d78d8efb8446257a9fb4583408',
     'x-rapidapi-host': 'v3.football.api-sports.io',
